@@ -28,7 +28,7 @@ const QuestionFour = () => {
   const constraintsRef = useRef();
   const handleRef = useRef();
   const progressBarRef = useRef();
-  const handleSize = 120;
+  const handleSize = 80; // Reduced for better mobile experience
   const handleX = useMotionValue(0);
   const progress = useTransform(handleX, (v) => v + handleSize / 2);
   const background = useMotionTemplate`linear-gradient(90deg, #C1D42F ${progress}px, #d1d5db 0)`;
@@ -111,8 +111,8 @@ const QuestionFour = () => {
           <div
             className={
               value != ""
-                ? "bg-ft-dark-green h-12 w-12 rounded-l-full flex items-center justify-center cursor-pointer shadow-lg"
-                : "bg-ft-dark-green  h-12 w-12 rounded-l-full flex items-center justify-center shadow-lg"
+                ? "bg-ft-dark-green h-14 w-14 sm:h-16 sm:w-16 rounded-l-full flex items-center justify-center touch-manipulation min-h-[44px] min-w-[44px] cursor-pointer shadow-lg"
+                : "bg-ft-dark-green  h-14 w-14 sm:h-16 sm:w-16 rounded-l-full flex items-center justify-center touch-manipulation min-h-[44px] min-w-[44px] shadow-lg"
             }
             onClick={navigatePrev}
           >
@@ -134,8 +134,8 @@ const QuestionFour = () => {
           <div
             className={
               value != ""
-                ? "bg-ft-dark-green h-12 w-12 rounded-l-full flex items-center justify-center cursor-pointer shadow-lg"
-                : "bg-gray-500 h-12 w-12 rounded-l-full flex items-center justify-center shadow-lg"
+                ? "bg-ft-dark-green h-14 w-14 sm:h-16 sm:w-16 rounded-l-full flex items-center justify-center touch-manipulation min-h-[44px] min-w-[44px] cursor-pointer shadow-lg"
+                : "bg-gray-500 h-14 w-14 sm:h-16 sm:w-16 rounded-l-full flex items-center justify-center touch-manipulation min-h-[44px] min-w-[44px] shadow-lg"
             }
             onClick={() => {
               if (value !== "") {

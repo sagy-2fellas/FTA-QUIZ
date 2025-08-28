@@ -106,7 +106,7 @@ const QuestionSix = () => {
             : "hidden pointer-events-none"
         }
       >
-        <h4 className="font-alegreya text-3xl">Shopping Cart:</h4>
+        <h4 className="font-alegreya text-xl sm:text-2xl md:text-3xl">Shopping Cart:</h4>
         <ul>
           {shopArray.map((x, i) => {
             return (
@@ -181,7 +181,7 @@ const QuestionSix = () => {
             : "hidden"
         }
       >
-        <h3 className="font-alegreya text-2xl lg:text-4xl  text-center">
+        <h3 className="font-alegreya text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center">
           We don’t want to make assumptions, so refine your answers before you
           continue.{" "}
         </h3>
