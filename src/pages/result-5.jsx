@@ -153,7 +153,7 @@ const FullpageWrapper = () => {
                     </span>
                     <p className="font-exo text-2xl">
                       If he’s lucky, his employers pay him the South African
-                      minimum wage – R4,7779 per month. Yes, he really is lucky
+                      minimum wage – R 4 985.43 per month. Yes, he really is lucky
                       to have a job, but that doesn’t mean he’s making enough to
                       feed his family, get healthcare or send his children to
                       school.

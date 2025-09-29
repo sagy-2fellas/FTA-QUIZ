@@ -377,7 +377,7 @@ manufactoring/retail space`,
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, type: "spring", delay: 0.5 }}
-            className="font-alegreya text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl mt-16 sm:mt-24 md:mt-32 lg:mt-36 max-w-5xl text-center px-4 leading-tight"
+            className="font-alegreya 2xl:text-7xl sm:text-5xl text-4xl mt-36  max-w-5xl text-center "
           >
             Do you work in the FMCG industry?
           </motion.h2>
@@ -385,7 +385,7 @@ manufactoring/retail space`,
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, type: "spring", delay: 0.9 }}
-            className="font-alegreya text-lg sm:text-2xl md:text-3xl lg:text-4xl mt-2 sm:mt-6 lg:max-w-3xl 2xl:max-w-4xl text-center px-4"
+            className="font-alegreya  sm:text-4xl mt-2 sm:mt-6 text-2xl lg:max-w-3xl 2xl:max-w-4xl text-center "
           >
             (This helps us talk to you about the things that matter to you)
           </motion.h3>

@@ -206,8 +206,8 @@ const QuestionTwo = () => {
               </h3>
               <p className="font-exo sm:text-sm text-xs">
                 There are about 500 000 farm workers in South Africa. By law,
-                they should be paid R27.53 per hour. For 9-hour works days, that
-                equals R4779.38 per month. Some don't get paid this much.
+              they should be paid R28.79 per hour. For 9-hour works days, that
+              equals R 4 985.43 per month. Some don't get paid this much.
               </p>
               <p className="font-exo sm:text-xs text-xs mt-2">
                 Source: The Commission for Conciliation, Mediation and
@@ -254,8 +254,8 @@ const QuestionTwo = () => {
             </h3>
             <p className="font-exo sm:text-sm text-xs">
               There are about 500 000 farm workers in South Africa. By law, they
-              should be paid R27.53 per hour. For 9-hour works days, that equals
-              R4779.38 per month. Some don't get paid this much.
+              should be paid R28.79 per hour. For 9-hour works days, that equals
+              R 4 985.43 per month. Some don't get paid this much.
             </p>
             <p className="font-exo sm:text-xs text-xs mt-2">
               Source: The Commission for Conciliation, Mediation and
