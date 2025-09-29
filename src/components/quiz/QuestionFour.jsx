@@ -21,9 +21,9 @@ const QuestionFour = () => {
   const dispatch = useDispatch();
 
   const min = 1;
-  const max = 3;
-  const allowedValues = [1, 2, 3];
-  const [value, setValue] = useState(2);
+  const max = 5;
+  const allowedValues = [1, 2, 3, 4, 5];
+  const [value, setValue] = useState(3);
   const [dragging, setDragging] = useState(false);
   const constraintsRef = useRef();
   const handleRef = useRef();
@@ -76,9 +76,11 @@ const QuestionFour = () => {
   }, [handleX, min, max, value]);
 
   const displayedValue = () => {
-    if (value === 1) return "H2O is the way to go";
-    if (value === 2) return "I enjoy my teatime";
-    if (value === 3) return "Tea is life!";
+    if (value === 1) return "Tea? Not my cup.";
+    if (value === 2) return "Occasional sipper, nothing serious.";
+    if (value === 3) return "Full-on kettle commander.";
+    if (value === 4) return "Life runs on steeped leaves.";
+    if (value === 5) return "I steep. Therefore, I am.";
     return Math.floor(value); // Default case (if needed)
   };
 
@@ -273,6 +275,8 @@ const QuestionFour = () => {
               {/* Indicators with values */}
               <div className="absolute w-full px-4 sm:px-12 lg:px-10">
                 <div className="flex justify-between">
+                  <span className="h-12 lg:h-10 w-4 bg-black rounded-full"></span>
+                  <span className="h-12 lg:h-10 w-4 bg-black rounded-full"></span>
                   <span className="h-12 lg:h-10 w-4 bg-black rounded-full"></span>
                   <span className="h-12 lg:h-10 w-4 bg-black rounded-full"></span>
                   <span className="h-12 lg:h-10 w-4 bg-black rounded-full"></span>

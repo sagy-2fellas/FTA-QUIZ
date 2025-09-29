@@ -19,9 +19,9 @@ import Link from "next/link";
 const QuestionFive = () => {
   const dispatch = useDispatch();
   const min = 1;
-  const max = 3;
-  const allowedValues = [1, 2, 3];
-  const [value, setValue] = useState(2);
+  const max = 5;
+  const allowedValues = [1, 2, 3, 4, 5];
+  const [value, setValue] = useState(3);
   const [dragging, setDragging] = useState(false);
   const constraintsRef = useRef();
   const handleRef = useRef();
@@ -74,9 +74,11 @@ const QuestionFive = () => {
   }, [handleX, min, max, value]);
 
   const displayedValue = () => {
-    if (value === 1) return "Hmm, no thanks";
-    if (value === 2) return "I order by the glass";
-    if (value === 3) return "Certified cork dork";
+    if (value === 1) return "Never. Grapes and I are on a break.";
+    if (value === 2) return "A cheeky glass every now and then.";
+    if (value === 3) return "My wine rack calls me by name.";
+    if (value === 4) return "Weekends are for wine.";
+    if (value === 5) return "One glass? Amateur hour. Pass the bottle.";
     return Math.floor(value); // Default case (if needed)
   };
 
@@ -270,6 +272,8 @@ const QuestionFive = () => {
               {/* Indicators with values */}
               <div className="absolute w-full px-4 sm:px-12 lg:px-10">
                 <div className="flex justify-between">
+                  <span className="h-12 lg:h-10 w-4 bg-black rounded-full"></span>
+                  <span className="h-12 lg:h-10 w-4 bg-black rounded-full"></span>
                   <span className="h-12 lg:h-10 w-4 bg-black rounded-full"></span>
                   <span className="h-12 lg:h-10 w-4 bg-black rounded-full"></span>
                   <span className="h-12 lg:h-10 w-4 bg-black rounded-full"></span>

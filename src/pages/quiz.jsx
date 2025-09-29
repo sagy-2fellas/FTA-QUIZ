@@ -96,9 +96,9 @@ const FullpageWrapper = () => {
             <QuizSection>
               <QuestionFive />
             </QuizSection>
-            {/* <QuizSection>
+            <QuizSection>
               <ChocolateConsumer />
-            </QuizSection> */}
+            </QuizSection>
             <QuizSection>
               <QuestionSix />
             </QuizSection>
