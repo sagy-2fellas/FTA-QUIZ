@@ -210,8 +210,7 @@ const QuestionTwo = () => {
               equals R 4 985.43 per month. Some don't get paid this much.
               </p>
               <p className="font-exo sm:text-xs text-xs mt-2">
-                Source: The Commission for Conciliation, Mediation and
-                Arbitration, March 2024.
+                Source: Department of Employment and Labour, Feb 2025
               </p>
             </div>
             <div className="flex justify-center mt-4">
@@ -258,8 +257,7 @@ const QuestionTwo = () => {
               R 4 985.43 per month. Some don't get paid this much.
             </p>
             <p className="font-exo sm:text-xs text-xs mt-2">
-              Source: The Commission for Conciliation, Mediation and
-              Arbitration, March 2024
+              Source: Department of Employment and Labour, Feb 2025
             </p>
           </FactCard>
           <SlideTwoChar value={value} />
