@@ -19,7 +19,7 @@ import {
 } from "framer-motion";
 
 const QuestionTwo = () => {
-  const [overlayClick, setOverlayClick] = useState(true);
+  const [overlayClick, setOverlayClick] = useState(false);
   const overlayRef = useRef(null);
   const dispatch = useDispatch();
   const min = 1;
@@ -330,11 +330,11 @@ const QuestionTwo = () => {
                     right: handleSize / 2,
                   }}
                 />
-                <div ref={constraintsRef}>
+                <div ref={constraintsRef} className="relative select-none">
                   <motion.div
                     data-test="slider-handle"
                     ref={handleRef}
-                    className="relative z-10  rounded-full cursor-pointer bg-ft-blue"
+                    className="relative z-20 rounded-full cursor-pointer bg-ft-blue touch-manipulation touch-pan-x"
                     drag="x"
                     dragMomentum={false}
                     dragConstraints={constraintsRef}
