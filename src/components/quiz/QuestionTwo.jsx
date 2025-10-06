@@ -125,7 +125,7 @@ const QuestionTwo = () => {
           />
         </div>
         <div
-          className={`z-10 absolute right-0 top-[45%] -translate-y-1/2 space-y-1 lg:hidden`}
+          className={`z-10 absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 space-y-2 lg:hidden`}
         >
           <div
             className={
@@ -262,14 +262,14 @@ const QuestionTwo = () => {
           </FactCard>
           <SlideTwoChar value={value} />
         </div>
-        <div className="flex  h-[90vh] lg:h-[92vh] 2xl:h-[90vh] w-full pb-6">
-          <div className="flex flex-col items-center justify-between  flex-initial w-full  lg:w-4/5  gap-y-4 sm:gap-y-6 lg:gap-y-8">
+        <div className="flex  h-[92vh] lg:h-[95vh] 2xl:h-[90vh]  w-full">
+          <div className="flex flex-col items-center justify-center  flex-initial w-full  lg:w-4/5  gap-y-4 sm:gap-y-6 lg:gap-y-8">
             {" "}
             <motion.h2
               initial={{ opacity: 0, y: 300 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, type: "spring", delay: 0.5 }}
-              className="font-alegreya text-2xl xs:text-4xl sm:text-5xl lg:!text-5xl 2xl:!text-7xl pt-6 xs:pt-10 lg:pt-16 2xl:!pt-24 text-center"
+              className="font-alegreya text-4xl xs:text-6xl sm:text-7xl lg:text-7xl 2xl:text-9xl pt-8 xs:pt-12 lg:pt-16 2xl:pt-20 text-center"
             >
               How familiar are you with this logo?
             </motion.h2>
@@ -283,7 +283,7 @@ const QuestionTwo = () => {
                   className="object-contain "
                 />
               </div>
-              <div className="lg:col-span-2 mx-auto mt-2 sm:mt-3">
+              <div className="lg:col-span-2 mx-auto">
                 {!dragging && (
                   <motion.div
                     key={displayedValue()}
@@ -298,14 +298,14 @@ const QuestionTwo = () => {
                 )}
               </div>
             </div>
-            <div className="lg:p-8 w-full">
+            <div className="lg:p-8 xl:p-12 2xl:p-16 w-full">
               <div
                 data-test="slider"
                 className="relative flex flex-col justify-center"
               >
                 <motion.div
                   data-test="slider-background"
-                  className="absolute w-full h-4 rounded-full pointer-events-none"
+                  className="absolute w-full h-4 xl:h-5 2xl:h-6 rounded-full pointer-events-none"
                   style={{
                     background,
                   }}
