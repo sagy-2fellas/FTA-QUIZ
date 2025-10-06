@@ -17,7 +17,7 @@ const QuestionThree = () => {
   const min = 1;
   const max = 5;
   const allowedValues = [1, 2, 3, 4, 5];
-  const [value, setValue] = useState(3);
+  const [value, setValue] = useState(2);
   const [dragging, setDragging] = useState(false);
   const constraintsRef = useRef();
   const handleRef = useRef();
@@ -61,13 +61,17 @@ const QuestionThree = () => {
 
   useEffect(() => {
     const updateInitialPosition = () => {
-      let newProgress = (value - min) / (max - min); // Adjust for min value
-      let progressBarBounds = progressBarRef.current.getBoundingClientRect();
-      handleX.set(newProgress * progressBarBounds.width);
+      if (progressBarRef.current) {
+        let newProgress = (value - min) / (max - min); // Adjust for min value
+        let progressBarBounds = progressBarRef.current.getBoundingClientRect();
+        handleX.set(newProgress * progressBarBounds.width);
+      }
     };
 
     // Delay setting the initial position until layout is fully measured
-    setTimeout(updateInitialPosition, 0);
+    setTimeout(updateInitialPosition, 100);
+    window.addEventListener('resize', updateInitialPosition);
+    return () => window.removeEventListener('resize', updateInitialPosition);
   }, [handleX, min, max, value]);
 
   const displayedValue = () => {
@@ -182,43 +186,46 @@ const QuestionThree = () => {
         </div>
         {/* END NAVIGATION */}
         {/* NAVIGATION FACT */}
-        {factToggled3 && (
-          <div className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-lg shadow-xl max-w-sm w-full mx-4 max-h-[80vh] overflow-y-auto">
-              <div className="p-6">
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="font-alegreya text-lg sm:text-xl border-l-2 border-ft-blue pl-2 flex-1">
-                    Six-year olds ensure your coffee stays nice and cheap
-                  </h3>
-                  <button
-                    onClick={() => {
-                      setFactToggled3(false);
-                    }}
-                    className="ml-4 bg-ft-dark-green text-white w-8 h-8 rounded-full flex items-center justify-center font-exo text-lg touch-manipulation min-h-[44px] min-w-[44px]"
-                    aria-label="Close fact"
-                  >
-                    ×
-                  </button>
-                </div>
-                <div className="mb-6">
-                  <p className="font-exo text-sm sm:text-base leading-relaxed">
-                    The cost of living is at an all-time high. Children as young
-                    as six years old in coffee-producing countries are doing their
-                    part to ensure your coffee stays affordable. They work between
-                    8 and 10 hours a day.
-                  </p>
-                  <p className="font-exo text-xs sm:text-sm mt-3 text-gray-600">
-                    ILO (2004): International Programme on the Elimination of
-                    Child Labour, Safety and Health Fact Sheet: Hazardous Child
-                    Labour in Agriculture Coffee - Geneva. ILO_REF: INT/00/000/AAA
-                  </p>
-                </div>
+        <div className="lg:hidden ">
+          <div
+            className={
+              factToggled3
+                ? `absolute top-1/2 -translate-y-1/2 right-1/2 translate-x-1/2 bg-white px-4 pt-10 pb-4 rounded-md shadow-lg z-20 w-72 mt-6 xs:!mt-0`
+                : `absolute  top-1/2 -translate-y-1/2 right-1/2 translate-x-1/2 bg-white px-4 pt-10 pb-4  rounded-md shadow-lg z-20 w-72 opacity-0 pointer-events-none mt-6 xs:!mt-0`
+            }
+          >
+            <div className="">
+              <div
+                onClick={() => {
+                  setFactToggled3(!factToggled3);
+                }}
+                className="shadow-lg cursor-pointer bg-ft-dark-green px-2  text-white flex absolute left-1 top-1 rounded-lg font-exo text-lg "
+              >
+                x
+              </div>
+              <div className="mb-4 ">
+                <h3 className="font-alegreya sm:text-2xl border-l-2 border-ft-blue pl-2 mb-4">
+                  Six-year olds ensure your coffee stays nice and cheap
+                </h3>
+                <p className="font-exo sm:text-sm text-xs">
+                  The cost of living is at an all-time high. Children as young
+                  as six years old in coffee-producing countries are doing their
+                  part to ensure your coffee stays affordable. They work between
+                  8 and 10 hours a day.
+                </p>
+                <p className="font-exo sm:text-xs text-xs mt-2">
+                  ILO (2004): International Programme on the Elimination of
+                  Child Labour, Safety and Health Fact Sheet: Hazardous Child
+                  Labour in Agriculture Coffee - Geneva. ILO_REF: INT/00/000/AAA
+                </p>
+              </div>
+              <div className="flex justify-center mt-4">
                 <button
-                  className="bg-ft-dark-green text-white px-6 py-3 rounded-md shadow-lg font-exo text-base w-full touch-manipulation min-h-[44px]"
+                  className="bg-ft-dark-green text-white px-4 py-2 rounded-md shadow-lg font-exo text-base w-full"
                   onClick={() => {
-                    window.fullpage_api.moveSectionDown();
+                    window.fullpage_api.moveSectionDown(); // Move to the next slide
                     dispatch(addCoffee(value));
-                    setFactToggled3(false);
+                    setFactToggled3(false); // Close the popup after navigating
                   }}
                 >
                   Go to Next Question
@@ -226,7 +233,7 @@ const QuestionThree = () => {
               </div>
             </div>
           </div>
-        )}
+        </div>
         {/* END NAVIGATION FACT */}
 
         {/* CONTENT SECTION */}
@@ -249,13 +256,13 @@ const QuestionThree = () => {
               </p>
             </FactCard>
           </div>
-          <div className="flex flex-col items-center justify-between  flex-initial w-full lg:w-3/5 2xl:w-4/6  gap-y-14 lg:gap-16 2xl:gap-y-20">
+          <div className="flex flex-col items-center justify-center  flex-initial w-full lg:w-3/5 2xl:w-4/6  gap-y-4 sm:gap-y-6 lg:gap-y-8">
             {" "}
             <motion.h2
               initial={{ opacity: 0, y: 300 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, type: "spring", delay: 0.5 }}
-              className="font-alegreya text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:!text-5xl 2xl:!text-7xl pt-16 xs:pt-20 sm:pt-24 lg:pt-40 2xl:!pt-56 text-center px-4 leading-tight"
+              className="font-alegreya text-4xl xs:text-6xl sm:text-7xl lg:text-7xl 2xl:text-9xl pt-8 xs:pt-12 lg:pt-16 2xl:pt-20 text-center"
             >
               How would you describe your
               <span className="block sm:inline"> coffee ritual?</span>
@@ -274,7 +281,7 @@ const QuestionThree = () => {
                 </motion.div>
               )}
             </div>
-            <div className="lg:p-8 w-full px-4 sm:px-6">
+            <div className="lg:p-8 w-full mt-16">
               <div
                 data-test="slider"
                 className="relative flex flex-col justify-center"
@@ -288,13 +295,13 @@ const QuestionThree = () => {
                 />
 
                 {/* Indicators with values */}
-                <div className="absolute w-full px-2 sm:px-4 md:px-8 lg:px-10">
+                <div className="absolute w-full px-4 lg:px-10 xl:px-12 2xl:px-16">
                   <div className="flex justify-between">
-                    <span className="h-8 sm:h-10 lg:h-10 w-3 sm:w-4 bg-black rounded-full"></span>
-                    <span className="h-8 sm:h-10 lg:h-10 w-3 sm:w-4 bg-black rounded-full"></span>
-                    <span className="h-8 sm:h-10 lg:h-10 w-3 sm:w-4 bg-black rounded-full"></span>
-                    <span className="h-8 sm:h-10 lg:h-10 w-3 sm:w-4 bg-black rounded-full"></span>
-                    <span className="h-8 sm:h-10 lg:h-10 w-3 sm:w-4 bg-black rounded-full"></span>
+                    <span className="h-12 lg:h-10 xl:h-12 2xl:h-14 w-4 xl:w-5 2xl:w-6 bg-black rounded-full"></span>
+                    <span className="h-12 lg:h-10 xl:h-12 2xl:h-14 w-4 xl:w-5 2xl:w-6 bg-black rounded-full"></span>
+                    <span className="h-12 lg:h-10 xl:h-12 2xl:h-14 w-4 xl:w-5 2xl:w-6 bg-black rounded-full"></span>
+                    <span className="h-12 lg:h-10 xl:h-12 2xl:h-14 w-4 xl:w-5 2xl:w-6 bg-black rounded-full"></span>
+                    <span className="h-12 lg:h-10 xl:h-12 2xl:h-14 w-4 xl:w-5 2xl:w-6 bg-black rounded-full"></span>
                   </div>
                 </div>
                 <div
@@ -306,11 +313,11 @@ const QuestionThree = () => {
                     right: handleSize / 2,
                   }}
                 />
-                <div ref={constraintsRef} className="relative select-none z-10">
+                <div ref={constraintsRef}>
                   <motion.div
                     data-test="slider-handle"
                     ref={handleRef}
-                    className="relative z-40 bg-transparent rounded-full cursor-pointer touch-manipulation touch-pan-x pointer-events-auto"
+                    className="relative z-10 bg-transparent rounded-full cursor-pointer"
                     drag="x"
                     dragMomentum={false}
                     dragConstraints={constraintsRef}
@@ -330,14 +337,25 @@ const QuestionThree = () => {
                       width: handleSize,
                       height: handleSize,
                       x: handleX,
-                      backgroundImage: `url('/img/2.png')`, // Set your image path here
+                      backgroundImage: `url('/img/2.png')`,
                       backgroundSize: "cover",
-
                       backgroundPosition: "center",
                       backgroundRepeat: "no-repeat",
                     }}
                   ></motion.div>
                 </div>
+                <div
+                  data-test="slider-clickable-area"
+                  className="absolute w-full h-10 "
+                  onPointerDown={(event) => {
+                    let { left, width } =
+                      progressBarRef.current.getBoundingClientRect();
+                    let position = event.pageX - left;
+                    let newProgress = clamp(position / width, 0, 1);
+                    let newValue = newProgress * (max - min);
+                    snapToClosestValue(newValue); // Snap to the closest value
+                  }}
+                />
               </div>
             </div>
           </div>
