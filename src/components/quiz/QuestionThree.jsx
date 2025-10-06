@@ -260,7 +260,7 @@ const QuestionThree = () => {
               How would you describe your
               <span className="block sm:inline"> coffee ritual?</span>
             </motion.h2>
-            <div className="flex justify-center">
+            <div className="flex justify-center pointer-events-none">
               {!dragging && (
                 <motion.div
                   key={displayedValue()}
@@ -281,7 +281,7 @@ const QuestionThree = () => {
               >
                 <motion.div
                   data-test="slider-background"
-                  className="absolute w-full h-4 rounded-full"
+                  className="absolute w-full h-4 rounded-full pointer-events-none"
                   style={{
                     background,
                   }}
@@ -306,11 +306,11 @@ const QuestionThree = () => {
                     right: handleSize / 2,
                   }}
                 />
-                <div ref={constraintsRef} className="relative select-none">
+                <div ref={constraintsRef} className="relative select-none z-10">
                   <motion.div
                     data-test="slider-handle"
                     ref={handleRef}
-                    className="relative z-20 bg-transparent rounded-full cursor-pointer touch-manipulation touch-pan-x"
+                    className="relative z-40 bg-transparent rounded-full cursor-pointer touch-manipulation touch-pan-x pointer-events-auto"
                     drag="x"
                     dragMomentum={false}
                     dragConstraints={constraintsRef}
