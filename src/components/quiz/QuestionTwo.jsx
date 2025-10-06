@@ -187,8 +187,8 @@ const QuestionTwo = () => {
         <div
           className={
             factToggled2
-              ? `absolute top-1/2  right-1/2 -translate-y-1/2 translate-x-1/2 bg-white px-4 pt-10 pb-4 rounded-md shadow-lg z-10 w-72 mt-6 xs:!mt-0`
-              : `absolute  top-1/2  right-1/2 translate-x-1/2 bg-white px-4 pt-10 pb-4  rounded-md shadow-lg z-10 w-72 opacity-0 pointer-events-none mt-6 xs:!mt-0`
+              ? `absolute top-1/2  right-1/2 -translate-y-1/2 translate-x-1/2 bg-white px-4 pt-10 pb-4 rounded-md shadow-lg z-50 w-72 mt-6 xs:!mt-0`
+              : `absolute  top-1/2  right-1/2 translate-x-1/2 bg-white px-4 pt-10 pb-4  rounded-md shadow-lg z-50 w-72 opacity-0 pointer-events-none mt-6 xs:!mt-0`
           }
         >
           <div className="">
@@ -301,7 +301,7 @@ const QuestionTwo = () => {
             <div className="lg:p-8 xl:p-12 2xl:p-16 w-full">
               <div
                 data-test="slider"
-                className="relative flex flex-col justify-center"
+                className={`relative flex flex-col justify-center ${factToggled2 ? "pointer-events-none" : ""}`}
               >
                 <motion.div
                   data-test="slider-background"
@@ -334,7 +334,7 @@ const QuestionTwo = () => {
                   <motion.div
                     data-test="slider-handle"
                     ref={handleRef}
-                    className="relative z-20 rounded-full cursor-pointer bg-ft-blue touch-manipulation touch-pan-x"
+                    className="relative z-10 rounded-full cursor-pointer bg-ft-blue touch-manipulation touch-pan-x"
                     drag="x"
                     dragMomentum={false}
                     dragConstraints={constraintsRef}
