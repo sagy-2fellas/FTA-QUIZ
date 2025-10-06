@@ -182,14 +182,8 @@ const QuestionThree = () => {
         </div>
         {/* END NAVIGATION */}
         {/* NAVIGATION FACT */}
-        <div className="lg:hidden ">
-          <div
-            className={
-              factToggled3
-                ? `fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4`
-                : `fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none`
-            }
-          >
+        {factToggled3 && (
+          <div className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
             <div className="bg-white rounded-lg shadow-xl max-w-sm w-full mx-4 max-h-[80vh] overflow-y-auto">
               <div className="p-6">
                 <div className="flex justify-between items-start mb-4">
@@ -198,7 +192,7 @@ const QuestionThree = () => {
                   </h3>
                   <button
                     onClick={() => {
-                      setFactToggled3(!factToggled3);
+                      setFactToggled3(false);
                     }}
                     className="ml-4 bg-ft-dark-green text-white w-8 h-8 rounded-full flex items-center justify-center font-exo text-lg touch-manipulation min-h-[44px] min-w-[44px]"
                     aria-label="Close fact"
@@ -222,9 +216,9 @@ const QuestionThree = () => {
                 <button
                   className="bg-ft-dark-green text-white px-6 py-3 rounded-md shadow-lg font-exo text-base w-full touch-manipulation min-h-[44px]"
                   onClick={() => {
-                    window.fullpage_api.moveSectionDown(); // Move to the next slide
+                    window.fullpage_api.moveSectionDown();
                     dispatch(addCoffee(value));
-                    setFactToggled3(false); // Close the popup after navigating
+                    setFactToggled3(false);
                   }}
                 >
                   Go to Next Question
@@ -232,7 +226,7 @@ const QuestionThree = () => {
               </div>
             </div>
           </div>
-        </div>
+        )}
         {/* END NAVIGATION FACT */}
 
         {/* CONTENT SECTION */}
@@ -312,11 +306,11 @@ const QuestionThree = () => {
                     right: handleSize / 2,
                   }}
                 />
-                <div ref={constraintsRef}>
+                <div ref={constraintsRef} className="relative select-none">
                   <motion.div
                     data-test="slider-handle"
                     ref={handleRef}
-                    className="relative z-10 bg-transparent rounded-full cursor-pointer touch-manipulation"
+                    className="relative z-20 bg-transparent rounded-full cursor-pointer touch-manipulation touch-pan-x"
                     drag="x"
                     dragMomentum={false}
                     dragConstraints={constraintsRef}
