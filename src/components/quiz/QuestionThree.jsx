@@ -237,7 +237,7 @@ const QuestionThree = () => {
         {/* END NAVIGATION FACT */}
 
         {/* CONTENT SECTION */}
-        <div className="flex  h-[92vh] lg:h-[95vh] 2xl:h-[90vh] pb-20 lg:pb-0">
+        <div className="flex  h-[92vh] lg:h-[95vh] 2xl:h-[90vh] pb-10 lg:pb-0">
           <div className="hidden lg:flex flex-initial w-1/5 2xl:w-1/6 items-end">
             <FactCard link="#">
               <h3 className="font-alegreya sm:text-2xl border-l-2 border-ft-blue pl-2 mb-4">
@@ -256,13 +256,13 @@ const QuestionThree = () => {
               </p>
             </FactCard>
           </div>
-          <div className="flex flex-col items-center justify-center  flex-initial w-full lg:w-3/5 2xl:w-4/6  gap-y-4 sm:gap-y-6 lg:gap-y-8">
+          <div className="flex flex-col items-center justify-center  flex-initial w-full lg:w-3/5 2xl:w-4/6  gap-y-3 sm:gap-y-5 lg:gap-y-6">
             {" "}
             <motion.h2
               initial={{ opacity: 0, y: 300 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, type: "spring", delay: 0.5 }}
-              className="font-alegreya text-4xl xs:text-6xl sm:text-7xl lg:text-7xl 2xl:text-9xl pt-8 xs:pt-12 lg:pt-16 2xl:pt-20 text-center"
+              className="font-alegreya text-4xl xs:text-6xl sm:text-7xl lg:text-7xl 2xl:text-9xl pt-6 xs:pt-8 lg:pt-12 2xl:pt-16 text-center"
             >
               How would you describe your
               <span className="block sm:inline"> coffee ritual?</span>
@@ -281,7 +281,7 @@ const QuestionThree = () => {
                 </motion.div>
               )}
             </div>
-            <div className="lg:p-8 w-full mt-16">
+            <div className="lg:p-6 w-full mt-10">
               <div
                 data-test="slider"
                 className="relative flex flex-col justify-center"

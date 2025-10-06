@@ -263,13 +263,13 @@ const QuestionTwo = () => {
           <SlideTwoChar value={value} />
         </div>
         <div className="flex  h-[92vh] lg:h-[95vh] 2xl:h-[90vh]  w-full">
-          <div className="flex flex-col items-center justify-between  flex-initial w-full  lg:w-4/5  sm:gap-y-14 lg:gap-16 2xl:gap-y-20">
+          <div className="flex flex-col items-center justify-between  flex-initial w-full  lg:w-4/5  gap-y-6 sm:gap-y-8 lg:gap-y-12">
             {" "}
             <motion.h2
               initial={{ opacity: 0, y: 300 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, type: "spring", delay: 0.5 }}
-              className="font-alegreya text-2xl xs:text-4xl sm:text-5xl lg:!text-5xl 2xl:!text-7xl pt-24 xs:pt-40 lg:pt-40 2xl:!pt-56 text-center"
+              className="font-alegreya text-2xl xs:text-4xl sm:text-5xl lg:!text-5xl 2xl:!text-7xl pt-10 xs:pt-16 lg:pt-24 2xl:!pt-32 text-center"
             >
               How familiar are you with this logo?
             </motion.h2>
