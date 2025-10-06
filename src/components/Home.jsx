@@ -8,8 +8,22 @@ const Home = () => {
       <div className={`${styles.boxWidth} mx-auto  `}>
         <div className="grid md:grid-cols-2  ">
           <div className="flex flex-col justify-center  2xl:space-y-8 space-y-8  mx-auto z-50 py-4 lg:py-20">
-            <div className="h-20 w-20 sm:h-auto sm:w-auto ">
-              <Image src="/img/logo-fairtrade.png" width={135} height={162} />
+            <div className="flex items-center gap-3 sm:gap-4 md:gap-6 h-20 sm:h-auto ">
+              <Image
+                src="/img/logo-fairtrade.png"
+                width={180}
+                height={216}
+                alt="Fairtrade Africa logo"
+                className="w-24 sm:w-28 md:w-32 h-auto"
+                priority
+              />
+              <Image
+                src="/img/fta20.png"
+                width={180}
+                height={180}
+                alt="FTA20 anniversary logo"
+                className="w-16 sm:w-20 md:w-24 h-auto"
+              />
             </div>
             <div className="  border-l-2 lg:py-14 border-ft-blue">
               <div className="2xl:space-y-8 sm:space-y-4 space-y-2 mx-10">
