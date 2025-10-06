@@ -1,6 +1,5 @@
 import styles from "../style";
 import Image from "next/image";
-import Fta20Logo from "./svg/Fta20Logo";
 import Link from "next/link";
 const Home = () => {
   return (
@@ -18,7 +17,6 @@ const Home = () => {
                 className="w-24 sm:w-28 md:w-32 h-auto"
                 priority
               />
-              <Fta20Logo className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24" />
             </div>
             <div className="  border-l-2 lg:py-14 border-ft-blue">
               <div className="2xl:space-y-8 sm:space-y-4 space-y-2 mx-10">
