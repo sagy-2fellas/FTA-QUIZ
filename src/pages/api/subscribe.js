@@ -13,6 +13,13 @@ export default async function handler(req, res) {
   const trimmedListId = (LIST_ID || "").trim();
   const trimmedApiKey = (API_KEY || "").trim();
 
+  // Safe diagnostics: log presence (not full secrets)
+  console.log("[Klaviyo] Using SA config:", {
+    apiKeyPresent: Boolean(trimmedApiKey),
+    apiKeyPreview: trimmedApiKey ? `${trimmedApiKey.slice(0, 4)}...${trimmedApiKey.slice(-4)}` : null,
+    listId: trimmedListId,
+  });
+
   if (!email) {
     return res.status(400).json({ error: "Email is required" });
   }
