@@ -13,14 +13,20 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: "Email is required" });
     }
 
-    // Get list ID from environment (default to South Africa)
-    // Can be extended to support country-based selection
+    // Get environment variables
     const LIST_ID = process.env.KLAVIYO_LIST_ID_SA || process.env.KLAVIYO_LIST_ID || "";
+    const API_KEY = process.env.KLAVIYO_PRIVATE_API_KEY || "";
     const trimmedListId = (LIST_ID || "").trim();
+    const trimmedApiKey = (API_KEY || "").trim();
 
     if (!trimmedListId) {
       console.error("[Klaviyo] Missing KLAVIYO_LIST_ID_SA or KLAVIYO_LIST_ID");
       return res.status(500).json({ error: "Server configuration error: Missing list ID" });
+    }
+
+    if (!trimmedApiKey) {
+      console.error("[Klaviyo] Missing KLAVIYO_PRIVATE_API_KEY");
+      return res.status(500).json({ error: "Server configuration error: Missing API key" });
     }
 
     // Log subscription attempt (safe info only)
@@ -32,32 +38,100 @@ export default async function handler(req, res) {
       customFieldsCount: Object.keys(customFields || {}).length,
     });
 
-    // Prepare Klaviyo client subscription payload
-    // Uses JSON:API format required by Klaviyo
-    const klaviyoPayload = {
+    // Step 1: Create or update profile with server-side API
+    const profilePayload = {
       data: {
-        type: "subscription",
+        type: "profile",
         attributes: {
-          profile: {
-            data: {
-              type: "profile",
-              attributes: {
-                email: email,
-                first_name: firstName || "",
-                last_name: lastName || "",
-                location: {
-                  country: "South Africa",
-                },
-                properties: {
-                  ...(customFields || {}),
-                  quiz_completed: true,
-                  quiz_completion_date: new Date().toISOString(),
-                  source: "FTA Quiz Form",
+          email: email,
+          first_name: firstName || "",
+          last_name: lastName || "",
+          location: {
+            country: "South Africa",
+          },
+          properties: {
+            ...(customFields || {}),
+            quiz_completed: true,
+            quiz_completion_date: new Date().toISOString(),
+            source: "FTA Quiz Form",
+          },
+        },
+      },
+    };
+
+    const profileResponse = await fetch("https://a.klaviyo.com/api/profiles/", {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        "content-type": "application/json",
+        revision: "2024-10-15",
+        Authorization: `Klaviyo-API-Key ${trimmedApiKey}`,
+      },
+      body: JSON.stringify(profilePayload),
+    });
+
+    let profileData = await profileResponse.json().catch(() => ({}));
+    let profileId = profileData?.data?.id;
+
+    // If profile already exists (409), fetch it
+    if (profileResponse.status === 409) {
+      console.log("[Klaviyo] Profile exists, fetching...");
+
+      const getProfileResponse = await fetch(
+        `https://a.klaviyo.com/api/profiles/?filter=equals(email,"${email}")`,
+        {
+          method: "GET",
+          headers: {
+            accept: "application/json",
+            revision: "2024-10-15",
+            Authorization: `Klaviyo-API-Key ${trimmedApiKey}`,
+          },
+        }
+      );
+
+      const getProfileData = await getProfileResponse.json().catch(() => ({}));
+      profileId = getProfileData?.data?.[0]?.id;
+
+      if (!profileId) {
+        console.error("[Klaviyo] Failed to fetch existing profile");
+        return res.status(500).json({ error: "Failed to process existing profile" });
+      }
+    } else if (!profileResponse.ok) {
+      console.error("[Klaviyo] Profile creation failed:", {
+        status: profileResponse.status,
+        error: profileData?.errors?.[0]?.detail || profileData,
+      });
+      return res.status(profileResponse.status).json({
+        error: profileData?.errors?.[0]?.detail || "Failed to create profile",
+        details: profileData,
+      });
+    }
+
+    console.log("[Klaviyo] Profile ready, ID:", profileId?.substring(0, 8) + "***");
+
+    // Step 2: Subscribe profile to list using server-side API
+    const subscribePayload = {
+      data: {
+        type: "profile-subscription-bulk-create-job",
+        attributes: {
+          profiles: {
+            data: [
+              {
+                type: "profile",
+                id: profileId,
+                attributes: {
+                  email: email,
+                  subscriptions: {
+                    email: {
+                      marketing: {
+                        consent: "SUBSCRIBED",
+                      },
+                    },
+                  },
                 },
               },
-            },
+            ],
           },
-          custom_source: "FTA Quiz",
         },
         relationships: {
           list: {
@@ -70,63 +144,46 @@ export default async function handler(req, res) {
       },
     };
 
-    // Call Klaviyo client subscription endpoint
-    // NOTE: This endpoint does NOT require authentication
-    // It's designed for client-side use and is unauthenticated
-    const response = await fetch("https://a.klaviyo.com/client/subscriptions/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        revision: "2024-10-15",
-      },
-      body: JSON.stringify(klaviyoPayload),
-    });
-
-    // Parse response (may be empty for some status codes)
-    let responseData = {};
-    try {
-      responseData = await response.json();
-    } catch (parseError) {
-      // Empty response is OK for 202 Accepted
-      if (response.status === 202) {
-        console.log("[Klaviyo] Subscription accepted for processing (202)");
+    const subscribeResponse = await fetch(
+      "https://a.klaviyo.com/api/profile-subscription-bulk-create-jobs/",
+      {
+        method: "POST",
+        headers: {
+          accept: "application/json",
+          "content-type": "application/json",
+          revision: "2024-10-15",
+          Authorization: `Klaviyo-API-Key ${trimmedApiKey}`,
+        },
+        body: JSON.stringify(subscribePayload),
       }
-    }
+    );
 
-    // Handle successful responses
-    if (response.ok) {
-      console.log("[Klaviyo] Subscription successful:", {
-        status: response.status,
-        email: email.substring(0, 3) + "***",
-      });
+    // Handle subscription response
+    if (subscribeResponse.status === 202) {
+      console.log("[Klaviyo] Subscription job accepted (202)");
       return res.status(200).json({
         success: true,
         message: "Successfully subscribed to the giveaway!",
       });
     }
 
-    // Handle 409 Conflict - Profile already exists/subscribed
-    // Treat this as success since user is already in the list
-    if (response.status === 409) {
-      console.log("[Klaviyo] Profile already subscribed (409):", {
-        email: email.substring(0, 3) + "***",
-      });
+    if (subscribeResponse.ok) {
+      console.log("[Klaviyo] Subscription successful");
       return res.status(200).json({
         success: true,
-        message: "You are already subscribed!",
+        message: "Successfully subscribed to the giveaway!",
       });
     }
 
-    // Handle other errors
+    const subscribeData = await subscribeResponse.json().catch(() => ({}));
     console.error("[Klaviyo] Subscription failed:", {
-      status: response.status,
-      statusText: response.statusText,
-      error: responseData?.errors?.[0]?.detail || responseData,
+      status: subscribeResponse.status,
+      error: subscribeData?.errors?.[0]?.detail || subscribeData,
     });
 
-    return res.status(response.status).json({
-      error: responseData?.errors?.[0]?.detail || "Failed to subscribe. Please try again.",
-      details: responseData,
+    return res.status(subscribeResponse.status).json({
+      error: subscribeData?.errors?.[0]?.detail || "Failed to subscribe to list",
+      details: subscribeData,
     });
   } catch (error) {
     console.error("[Klaviyo] Server error:", error);
