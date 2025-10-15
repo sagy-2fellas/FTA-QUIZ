@@ -205,18 +205,13 @@ const QuestionThree = () => {
               </div>
               <div className="mb-4 ">
                 <h3 className="font-alegreya sm:text-2xl border-l-2 border-ft-blue pl-2 mb-4">
-                  Six-year olds ensure your coffee stays nice and cheap
+                  Six-year-olds are part of the cost to keep chocolate cheap.
                 </h3>
-                <p className="font-exo sm:text-sm text-xs">
-                  The cost of living is at an all-time high. Children as young
-                  as six years old in coffee-producing countries are doing their
-                  part to ensure your coffee stays affordable. They work between
-                  8 and 10 hours a day.
+                <p className="font-exo sm:text-sm text-xs mb-2">
+                  In Côte d'Ivoire and Ghana, some 1.56 million children work in cocoa production. Many do this under conditions that endanger their safety and education. Choosing Fairtrade helps prevent child labour and promotes safe, child-friendly farming practices.
                 </p>
-                <p className="font-exo sm:text-xs text-xs mt-2">
-                  ILO (2004): International Programme on the Elimination of
-                  Child Labour, Safety and Health Fact Sheet: Hazardous Child
-                  Labour in Agriculture Coffee - Geneva. ILO_REF: INT/00/000/AAA
+                <p className="font-exo sm:text-xs text-xs italic text-gray-600">
+                  U.S. Department of Labor (2022). Child Labor in Cocoa Production: Côte d'Ivoire and Ghana. Washington, DC: Bureau of International Labor Affairs (ILAB). Available at: https://www.dol.gov/agencies/ilab/our-work/child-forced-labor-trafficking/child-labor-cocoa
                 </p>
               </div>
               <div className="flex justify-center mt-4">
@@ -241,18 +236,13 @@ const QuestionThree = () => {
           <div className="hidden lg:flex flex-initial w-1/5 2xl:w-1/6 items-end">
             <FactCard link="#">
               <h3 className="font-alegreya sm:text-2xl border-l-2 border-ft-blue pl-2 mb-4">
-                Six-year olds ensure your coffee stays nice and cheap
+                Six-year-olds are part of the cost to keep chocolate cheap.
               </h3>
-              <p className="font-exo sm:text-sm text-xs">
-                The cost of living is at an all-time high. Children as young as
-                six years old in coffee-producing countries are doing their part
-                to ensure your coffee stays affordable. They work between 8 and
-                10 hours a day.
+              <p className="font-exo sm:text-sm text-xs mb-2">
+                In Côte d'Ivoire and Ghana, some 1.56 million children work in cocoa production. Many do this under conditions that endanger their safety and education. Choosing Fairtrade helps prevent child labour and promotes safe, child-friendly farming practices.
               </p>
-              <p className="font-exo sm:text-xs text-xs mt-2">
-                ILO (2004): International Programme on the Elimination of Child
-                Labour, Safety and Health Fact Sheet: Hazardous Child Labour in
-                Agriculture Coffee - Geneva. ILO_REF: INT/00/000/AAA
+              <p className="font-exo sm:text-xs text-xs italic text-gray-600">
+                U.S. Department of Labor (2022). Child Labor in Cocoa Production: Côte d'Ivoire and Ghana. Washington, DC: Bureau of International Labor Affairs (ILAB). Available at: https://www.dol.gov/agencies/ilab/our-work/child-forced-labor-trafficking/child-labor-cocoa
               </p>
             </FactCard>
           </div>

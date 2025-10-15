@@ -181,15 +181,13 @@ const ChocolateConsumer = () => {
               </div>
               <div className="mb-4 ">
                 <h3 className="font-alegreya sm:text-2xl border-l-2 border-ft-blue pl-2 mb-4">
-                  Free toy inside? Try free child labour.
+                  Free toy inside?
                 </h3>
-                <p className="font-exo sm:text-sm text-xs">
-                  Thousands of kids across Ghana and Côte d’Ivoire work 12-hour
-                  shifts on cocoa plantations to help meet global chocolate
-                  demand, unpaid, unschooled, and unsafe.
+                <p className="font-exo sm:text-sm text-xs mb-2">
+                  In Ghana and Côte d'Ivoire, over 1.5 million children are estimated to work in cocoa production - many in hazardous conditions. Some studies suggest as many as 45% of children living in cocoa areas are involved in farming tasks. Fairtrade works through community programmes to protect children from exploitation and promote education.
                 </p>
-                <p className="font-exo sm:text-xs text-xs mt-2">
-                  Source: U.S. Department of Labor, 2022 / NORC
+                <p className="font-exo sm:text-xs text-xs italic text-gray-600">
+                  Reuters (2025). Ensure Cocoa Farmers' Children Go to School? Try Educating Their Mothers First. Published 1 September 2025. Available at: https://www.reuters.com/sustainability/society-equity/ensure-cocoa-farmers-children-go-school-try-educating-their-mothers--ecmii-2025-09-01/
                 </p>
               </div>
               <div className="flex justify-center mt-4">
@@ -214,15 +212,13 @@ const ChocolateConsumer = () => {
           <div className="hidden lg:flex flex-initial w-1/5 2xl:w-1/6 items-end">
             <FactCard link="#">
               <h3 className="font-alegreya sm:text-2xl border-l-2 border-ft-blue pl-2 mb-4">
-                Free toy inside? Try free child labour.
+                Free toy inside?
               </h3>
-              <p className="font-exo sm:text-sm text-xs">
-                Thousands of kids across Ghana and Côte d’Ivoire work 12-hour
-                shifts on cocoa plantations to help meet global chocolate
-                demand, unpaid, unschooled, and unsafe.
+              <p className="font-exo sm:text-sm text-xs mb-2">
+                In Ghana and Côte d'Ivoire, over 1.5 million children are estimated to work in cocoa production - many in hazardous conditions. Some studies suggest as many as 45% of children living in cocoa areas are involved in farming tasks. Fairtrade works through community programmes to protect children from exploitation and promote education.
               </p>
-              <p className="font-exo sm:text-xs text-xs mt-2">
-                Source: U.S. Department of Labor, 2022 / NORC
+              <p className="font-exo sm:text-xs text-xs italic text-gray-600">
+                Reuters (2025). Ensure Cocoa Farmers' Children Go to School? Try Educating Their Mothers First. Published 1 September 2025. Available at: https://www.reuters.com/sustainability/society-equity/ensure-cocoa-farmers-children-go-school-try-educating-their-mothers--ecmii-2025-09-01/
               </p>
             </FactCard>
           </div>

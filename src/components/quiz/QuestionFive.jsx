@@ -181,18 +181,13 @@ const QuestionFive = () => {
             </div>
             <div className="mb-4">
               <h3 className="font-alegreya text-2xl border-l-2 border-ft-blue pl-2 mb-4">
-                Notes of blackberry and barriers to healthcare
+                Notes of blackberry. Hints of oak. Barriers to healthcare.
               </h3>
-              <p className="font-exo text-sm">
-                98.5% of South African farm workers don't receive contributions
-                to health insurance. Pair that with a huge lack of public
-                healthcare services in rural farming areas, and what do you get?
-                A pretty grim sip of wine.
+              <p className="font-exo text-sm mb-2">
+                98.5% of South African farm workers receive no contributions to health insurance. With public health services thin in many rural areas, this gap has serious consequences. Choosing Fairtrade supports models that encourage safer work environments, fair pay, and community investments in health.
               </p>
-              <p className="font-exo sm:text-xs text-xs mt-2">
-                Visser, M. & Ferrer, S. (2015) Farm Workers’ Living and Working
-                Conditions in South Africa: key trends, emergent issues, and
-                underlying and structural problems.
+              <p className="font-exo sm:text-xs text-xs italic text-gray-600">
+                (Visser, M. & Ferrer, S. (2015). Farm Workers' Living and Working Conditions in South Africa: Key Trends, Emergent Issues, and Underlying Structural Problems. University of Cape Town & University of KwaZulu-Natal. Commissioned by the International Labour Organization (ILO). Available at: https://www.ilo.org/global/topics/wages/minimum-wages/WCMS_436204/lang--en/index.htm)
               </p>
             </div>
             <div className="flex justify-center mt-4">
@@ -217,18 +212,13 @@ const QuestionFive = () => {
         <div className="hidden lg:flex flex-initial w-1/5 2xl:w-1/6 items-end">
           <FactCard link="#">
             <h3 className="font-alegreya text-2xl border-l-2 border-ft-blue pl-2 mb-4">
-              Notes of blackberry and barriers to healthcare
+              Notes of blackberry. Hints of oak. Barriers to healthcare.
             </h3>
-            <p className="font-exo text-sm">
-              98.5% of South African farm workers don't receive contributions to
-              health insurance. Pair that with a huge lack of public healthcare
-              services in rural farming areas, and what do you get? A pretty
-              grim sip of wine.
+            <p className="font-exo text-sm mb-2">
+              98.5% of South African farm workers receive no contributions to health insurance. With public health services thin in many rural areas, this gap has serious consequences. Choosing Fairtrade supports models that encourage safer work environments, fair pay, and community investments in health.
             </p>
-            <p className="font-exo sm:text-xs text-xs mt-2">
-              Visser, M. & Ferrer, S. (2015) Farm Workers’ Living and Working
-              Conditions in South Africa: key trends, emergent issues, and
-              underlying and structural problems.
+            <p className="font-exo sm:text-xs text-xs italic text-gray-600">
+              (Visser, M. & Ferrer, S. (2015). Farm Workers' Living and Working Conditions in South Africa: Key Trends, Emergent Issues, and Underlying Structural Problems. University of Cape Town & University of KwaZulu-Natal. Commissioned by the International Labour Organization (ILO). Available at: https://www.ilo.org/global/topics/wages/minimum-wages/WCMS_436204/lang--en/index.htm)
             </p>
           </FactCard>
         </div>

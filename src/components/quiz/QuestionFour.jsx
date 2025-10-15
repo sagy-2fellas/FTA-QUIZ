@@ -184,18 +184,13 @@ const QuestionFour = () => {
             </div>
             <div className="mb-4">
               <h3 className="font-alegreya text-2xl border-l-2 border-ft-blue pl-2 mb-4">
-                It's okay, your kids will pick up the tab
+                It's okay - your kids will pick up the tab.
               </h3>
-              <p className="font-exo text-sm">
-                The detrimental impacts of water pollution, loss of
-                biodiversity, spread of GMOs, loss of soil fertility and climate
-                change will only really be paid by your kids. They don't need to
-                know what rooibos tastes like, right? Good, 'cause they probably
-                won't be able to afford it.
+              <p className="font-exo text-sm mb-2">
+                Water pollution, biodiversity loss, soil degradation, deforestation - these are real consequences of unsustainable farming. In West Africa's cocoa belt, increasing heat stress is putting yields and ecosystems at risk. When you support Fairtrade farming, you help safeguard the land and climate for those who come after us.
               </p>
-              <p className="font-exo sm:text-xs text-xs mt-2">
-                World Wildlife Fund (WWF) (2010): Agriculture: Facts & Trends
-                South Africa, South Africa.
+              <p className="font-exo sm:text-xs text-xs italic text-gray-600">
+                Reuters (2024). More Collaboration Needed as Cocoa Firms Battle Deforestation and Child Labour Risks. Published 19 August 2024. Available at: https://www.reuters.com/sustainability/society-equity/more-collaboration-needed-cocoa-firms-battle-deforestation-child-labour-risks-2024-08-19/
               </p>
             </div>
             <div className="flex justify-center mt-4">
@@ -220,18 +215,13 @@ const QuestionFour = () => {
         <div className="hidden lg:flex ml-10 flex-initial w-1/5 2xl:w-1/6 items-end">
           <FactCard link="#">
             <h3 className="font-alegreya text-2xl border-l-2 border-ft-blue pl-2 mb-4">
-              It's okay, your kids will pick up the tab
+              It's okay - your kids will pick up the tab.
             </h3>
-            <p className="font-exo text-sm">
-              The detrimental impacts of water pollution, loss of biodiversity,
-              spread of GMOs, loss of soil fertility and climate change will
-              only really be paid by your kids. They don't need to know what
-              rooibos tastes like, right? Good, 'cause they probably won't be
-              able to afford it.
+            <p className="font-exo text-sm mb-2">
+              Water pollution, biodiversity loss, soil degradation, deforestation - these are real consequences of unsustainable farming. In West Africa's cocoa belt, increasing heat stress is putting yields and ecosystems at risk. When you support Fairtrade farming, you help safeguard the land and climate for those who come after us.
             </p>
-            <p className="font-exo sm:text-xs text-xs mt-2">
-              World Wildlife Fund (WWF) (2010): Agriculture: Facts & Trends
-              South Africa, South Africa.
+            <p className="font-exo sm:text-xs text-xs italic text-gray-600">
+              Reuters (2024). More Collaboration Needed as Cocoa Firms Battle Deforestation and Child Labour Risks. Published 19 August 2024. Available at: https://www.reuters.com/sustainability/society-equity/more-collaboration-needed-cocoa-firms-battle-deforestation-child-labour-risks-2024-08-19/
             </p>
           </FactCard>
         </div>
