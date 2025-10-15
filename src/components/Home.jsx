@@ -7,14 +7,14 @@ const Home = () => {
       <div className="bgHomeHero h-full  w-screen md:w-1/2  absolute right-0 "></div>
       <div className={`${styles.boxWidth} mx-auto  `}>
         <div className="grid md:grid-cols-2  ">
-          <div className="flex flex-col justify-center  2xl:space-y-8 space-y-8  mx-auto z-50 py-4 lg:py-20">
-            <div className="flex items-center gap-3 sm:gap-4 md:gap-6 h-20 sm:h-auto ">
+          <div className="flex flex-col justify-center  2xl:space-y-8 space-y-4 sm:space-y-8  mx-auto z-50 py-4 lg:py-20">
+            <div className="flex items-center gap-3 sm:gap-4 md:gap-6 mb-4 sm:mb-0">
               <Image
                 src="/img/logo-fairtrade.png"
                 width={180}
                 height={216}
                 alt="Fairtrade Africa logo"
-                className="w-24 sm:w-28 md:w-32 h-auto"
+                className="w-20 sm:w-28 md:w-32 h-auto"
                 priority
               />
             </div>
