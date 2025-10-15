@@ -14,7 +14,7 @@ const Home = () => {
                 width={180}
                 height={216}
                 alt="Fairtrade Africa logo"
-                className="w-20 sm:w-28 md:w-32 h-auto"
+                className="w-12 sm:w-17 md:w-19 h-auto"
                 priority
               />
             </div>
