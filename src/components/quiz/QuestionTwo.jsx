@@ -204,13 +204,11 @@ const QuestionTwo = () => {
               <h3 className="font-alegreya sm:text-2xl border-l-2  border-ft-blue pl-2 mb-4">
                 Do you know what a farm worker earns per month?
               </h3>
-              <p className="font-exo sm:text-sm text-xs">
-                There are about 500 000 farm workers in South Africa. By law,
-              they should be paid R28.79 per hour. For 9-hour works days, that
-              equals R 4 985.43 per month. Some don't get paid this much.
+              <p className="font-exo sm:text-sm text-xs mb-2">
+                There are around 500 000 farm workers in South Africa. From 1 March 2025, the minimum wage for farm and domestic workers in South Africa rose to R28.79/hr (a 4.4% increase). That's about R 4 985 for a 9-hour working day. Yet many still don't receive this legal minimum.
               </p>
-              <p className="font-exo sm:text-xs text-xs mt-2">
-                Source: Department of Employment and Labour, Feb 2025
+              <p className="font-exo sm:text-xs text-xs italic text-gray-600">
+                Agri SA (2025). Published March 2025. Available at: https://agrisa.org.za/agri-sa/agrisa-responds-to-the-4-4-increase-in-the-national-minimum-wage-for-farm-workers-in-south-africa-get-insights-into-the-decision-and-its-impact/
               </p>
             </div>
             <div className="flex justify-center mt-4">
@@ -251,13 +249,11 @@ const QuestionTwo = () => {
             <h3 className="font-alegreya sm:text-2xl border-l-2  border-ft-blue pl-2 mb-4">
               Do you know what a farm worker earns per month?
             </h3>
-            <p className="font-exo sm:text-sm text-xs">
-              There are about 500 000 farm workers in South Africa. By law, they
-              should be paid R28.79 per hour. For 9-hour works days, that equals
-              R 4 985.43 per month. Some don't get paid this much.
+            <p className="font-exo sm:text-sm text-xs mb-2">
+              There are around 500 000 farm workers in South Africa. From 1 March 2025, the minimum wage for farm and domestic workers in South Africa rose to R28.79/hr (a 4.4% increase). That's about R 4 985 for a 9-hour working day. Yet many still don't receive this legal minimum.
             </p>
-            <p className="font-exo sm:text-xs text-xs mt-2">
-              Source: Department of Employment and Labour, Feb 2025
+            <p className="font-exo sm:text-xs text-xs italic text-gray-600">
+              Agri SA (2025). Published March 2025. Available at: https://agrisa.org.za/agri-sa/agrisa-responds-to-the-4-4-increase-in-the-national-minimum-wage-for-farm-workers-in-south-africa-get-insights-into-the-decision-and-its-impact/
             </p>
           </FactCard>
           <SlideTwoChar value={value} />
