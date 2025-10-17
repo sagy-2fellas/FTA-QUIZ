@@ -21,7 +21,7 @@ const ThankYou = () => {
       } else {
         clearInterval(interval);
         document.location.href =
-          "https://gleam.io/qTtlA/befairrightnow-giveaway";
+          "https://gleam.io/pKJu5/befairrightnow-south-africa-2025";
       }
     }, 1000);
   }
