@@ -16,7 +16,7 @@ export const store = configureStore({
     QuestionThree: questionThreeReducer,
     QuestionFour: questionFourReducer,
     QuestionFive: questionFiveReducer,
-    // ChocolateConsumer: chocolateConsumerReducer,
+    ChocolateConsumer: chocolateConsumerReducer,
     QuestionSix: questionSixReducer,
     QuestionSixFT: questionSixRefinedReducer,
     QuestionSeven: questionSevenReducer,
