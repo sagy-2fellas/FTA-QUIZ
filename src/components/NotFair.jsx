@@ -8,6 +8,9 @@ const NotFair = () => {
   const qThree = useSelector((state) => state.QuestionThree.value);
   const qFour = useSelector((state) => state.QuestionFour.value);
   const qFive = useSelector((state) => state.QuestionFive.value);
+  const chocolateConsumer = useSelector(
+    (state) => state.ChocolateConsumer.value
+  );
   const qSix = useSelector((state) => state.QuestionSix.shoppingList);
   const qSixR = useSelector((state) => state.QuestionSixFT.shoppingListRefined);
   const qSeven = useSelector((state) => state.QuestionSeven.value);
@@ -45,6 +48,7 @@ const NotFair = () => {
             question_3: qThree,
             question_4: qFour,
             question_5: qFive,
+            chocolate_consumer: chocolateConsumer,
             shopping_cart: qSix,
             ft_shopping_cart: qSixR,
             question_7: qSeven,
