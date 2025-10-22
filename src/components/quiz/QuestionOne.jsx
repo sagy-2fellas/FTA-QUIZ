@@ -169,12 +169,12 @@ const QuestionOne = ({}) => {
             initial={{ opacity: 0, y: 300 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, type: "spring", delay: 0.5 }}
-            className="font-alegreya text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl text-center md:text-left max-w-xs sm:max-w-xl md:max-w-[20rem] px-4 leading-tight"
+            className="font-alegreya text-4xl xs:text-6xl sm:text-7xl md:text-5xl lg:text-6xl 2xl:text-8xl text-center md:text-left max-w-xs sm:max-w-xl md:max-w-[20rem] px-4 leading-tight pt-8 xs:pt-12 lg:pt-16 2xl:pt-20"
           >
             Where do you live in South Africa?
           </motion.h2>
         </div>
-        <div className="md:flex items-center flex-1 pb-4 sm:pb-10 md:pb-0 px-4 sm:px-6">
+        <div className="md:flex items-center flex-1 pb-2 sm:pb-4 md:pb-0 px-4 sm:px-6 lg:px-8 xl:px-12">
           <Map selectProvince={handleSelection} />
         </div>
         <div className=" md:flex justify-between pr-12 flex-col items-end pt-28 lg:pt-40 flex-1 hidden">
