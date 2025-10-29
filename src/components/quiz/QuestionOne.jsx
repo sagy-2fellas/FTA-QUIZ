@@ -174,9 +174,6 @@ const QuestionOne = ({}) => {
             Where do you live in South Africa?
           </motion.h2>
         </div>
-        <div className="md:flex items-center flex-1 pb-2 sm:pb-4 md:pb-0 px-4 sm:px-6 lg:px-8 xl:px-12">
-          <Map selectProvince={handleSelection} />
-        </div>
         {/* Speech Bubble for Selected Province - Mobile: Between Question and Map */}
         <AnimatePresence>
           {value && (
@@ -194,6 +191,9 @@ const QuestionOne = ({}) => {
             </div>
           )}
         </AnimatePresence>
+        <div className="md:flex items-center flex-1 pb-2 sm:pb-4 md:pb-0 px-4 sm:px-6 lg:px-8 xl:px-12">
+          <Map selectProvince={handleSelection} />
+        </div>
         <div className=" md:flex justify-between pr-8 xl:pr-12 flex-col items-end pt-28 lg:pt-32 xl:pt-40 flex-1 hidden">
           <div>
             <FactCard link="#">
