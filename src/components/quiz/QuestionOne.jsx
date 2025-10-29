@@ -163,13 +163,13 @@ const QuestionOne = ({}) => {
       {/* END NAVIGATION FACT */}
 
       {/* CONTENT */}
-      <div className="h-full w-full flex flex-col md:flex-row">
+      <div className="min-h-screen md:h-full w-full flex flex-col md:flex-row">
         <div className="flex items-center justify-center md:justify-start h-full md:flex-initial md:w-1/4">
           <motion.h2
             initial={{ opacity: 0, y: 300 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, type: "spring", delay: 0.5 }}
-            className="font-alegreya text-4xl xs:text-6xl sm:text-7xl lg:text-7xl 2xl:text-9xl text-center md:text-left max-w-xs sm:max-w-xl md:max-w-[20rem] px-4 leading-tight pt-8 xs:pt-12 lg:pt-16 2xl:pt-20"
+            className="font-alegreya text-4xl xs:text-6xl sm:text-7xl lg:text-7xl 2xl:text-9xl text-center md:text-left max-w-xs sm:max-w-xl md:max-w-[20rem] px-4 leading-tight pt-4 xs:pt-6 lg:pt-16 2xl:pt-20"
           >
             Where do you live in South Africa?
           </motion.h2>
@@ -191,7 +191,7 @@ const QuestionOne = ({}) => {
             </div>
           )}
         </AnimatePresence>
-        <div className="md:flex items-center flex-1 pb-2 sm:pb-4 md:pb-0 px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="md:flex items-center md:flex-1 pb-2 sm:pb-4 md:pb-0 px-4 sm:px-6 lg:px-8 xl:px-12">
           <Map selectProvince={handleSelection} />
         </div>
         <div className=" md:flex justify-between pr-8 xl:pr-12 flex-col items-end pt-28 lg:pt-32 xl:pt-40 flex-1 hidden">
