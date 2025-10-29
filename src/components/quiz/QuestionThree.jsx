@@ -211,7 +211,8 @@ const QuestionThree = () => {
                   In Côte d'Ivoire and Ghana, some 1.56 million children work in cocoa production. Many do this under conditions that endanger their safety and education. Choosing Fairtrade helps prevent child labour and promotes safe, child-friendly farming practices.
                 </p>
                 <p className="font-exo sm:text-xs text-xs italic text-gray-600">
-                  U.S. Department of Labor (2022). Child Labor in Cocoa Production: Côte d'Ivoire and Ghana. Washington, DC: Bureau of International Labor Affairs (ILAB). Available at: https://www.dol.gov/agencies/ilab/our-work/child-forced-labor-trafficking/child-labor-cocoa
+                  U.S. Department of Labor (2022). Child Labor in Cocoa Production: Côte d'Ivoire and Ghana.
+Washington, DC: Bureau of International Labor Affairs (ILAB)
                 </p>
               </div>
               <div className="flex justify-center mt-4">
@@ -242,7 +243,8 @@ const QuestionThree = () => {
                 In Côte d'Ivoire and Ghana, some 1.56 million children work in cocoa production. Many do this under conditions that endanger their safety and education. Choosing Fairtrade helps prevent child labour and promotes safe, child-friendly farming practices.
               </p>
               <p className="font-exo sm:text-xs text-xs italic text-gray-600">
-                U.S. Department of Labor (2022). Child Labor in Cocoa Production: Côte d'Ivoire and Ghana. Washington, DC: Bureau of International Labor Affairs (ILAB). Available at: https://www.dol.gov/agencies/ilab/our-work/child-forced-labor-trafficking/child-labor-cocoa
+                U.S. Department of Labor (2022). Child Labor in Cocoa Production: Côte d'Ivoire and Ghana.
+Washington, DC: Bureau of International Labor Affairs (ILAB)
               </p>
             </FactCard>
           </div>

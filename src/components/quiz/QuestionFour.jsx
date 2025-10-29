@@ -190,7 +190,7 @@ const QuestionFour = () => {
                 Water pollution, biodiversity loss, soil degradation, deforestation - these are real consequences of unsustainable farming. In West Africa's cocoa belt, increasing heat stress is putting yields and ecosystems at risk. When you support Fairtrade farming, you help safeguard the land and climate for those who come after us.
               </p>
               <p className="font-exo sm:text-xs text-xs italic text-gray-600">
-                Reuters (2024). More Collaboration Needed as Cocoa Firms Battle Deforestation and Child Labour Risks. Published 19 August 2024. Available at: https://www.reuters.com/sustainability/society-equity/more-collaboration-needed-cocoa-firms-battle-deforestation-child-labour-risks-2024-08-19/
+                Reuters (2024). More Collaboration Needed as Cocoa Firms Battle Deforestation and Child Labour Risks. Published 19 August 2024.
               </p>
             </div>
             <div className="flex justify-center mt-4">
@@ -221,7 +221,7 @@ const QuestionFour = () => {
               Water pollution, biodiversity loss, soil degradation, deforestation - these are real consequences of unsustainable farming. In West Africa's cocoa belt, increasing heat stress is putting yields and ecosystems at risk. When you support Fairtrade farming, you help safeguard the land and climate for those who come after us.
             </p>
             <p className="font-exo sm:text-xs text-xs italic text-gray-600">
-              Reuters (2024). More Collaboration Needed as Cocoa Firms Battle Deforestation and Child Labour Risks. Published 19 August 2024. Available at: https://www.reuters.com/sustainability/society-equity/more-collaboration-needed-cocoa-firms-battle-deforestation-child-labour-risks-2024-08-19/
+              Reuters (2024). More Collaboration Needed as Cocoa Firms Battle Deforestation and Child Labour Risks. Published 19 August 2024.
             </p>
           </FactCard>
         </div>

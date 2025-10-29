@@ -143,7 +143,7 @@ const QuestionOne = ({}) => {
                   It's about you. Everyone in the supply chain deserves fairness - from the people growing the crop to those harvesting it. When you choose products with the Fairtrade Mark, you back sustainable farming, decent work, and fair relationships across the chain - farmers, farm workers, and buyers alike.
                 </p>
                 <p className="font-exo text-xs sm:text-sm text-gray-600 italic">
-                  (Fairtrade International. Risk Map – Salient Issues: Child Rights and Labour Practices Across Commodities. Accessed October 2025. Available at: https://riskmap.fairtrade.net/salient-issues/child-rights)
+                  (Fairtrade International. Risk Map – Salient Issues: Child Rights and Labour Practices Across Commodities. Accessed October 2025.
                 </p>
               </div>
               <button
@@ -187,7 +187,7 @@ const QuestionOne = ({}) => {
                 It's about you. Everyone in the supply chain deserves fairness - from the people growing the crop to those harvesting it. When you choose products with the Fairtrade Mark, you back sustainable farming, decent work, and fair relationships across the chain - farmers, farm workers, and buyers alike.
               </p>
               <p className="font-exo text-xs text-gray-600 italic">
-                (Fairtrade International. Risk Map – Salient Issues: Child Rights and Labour Practices Across Commodities. Accessed October 2025. Available at: https://riskmap.fairtrade.net/salient-issues/child-rights)
+                (Fairtrade International. Risk Map – Salient Issues: Child Rights and Labour Practices Across Commodities. Accessed October 2025.
               </p>
             </FactCard>
           </div>

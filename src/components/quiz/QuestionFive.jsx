@@ -184,10 +184,12 @@ const QuestionFive = () => {
                 Notes of blackberry. Hints of oak. Barriers to healthcare.
               </h3>
               <p className="font-exo text-sm mb-2">
-                98.5% of South African farm workers receive no contributions to health insurance. With public health services thin in many rural areas, this gap has serious consequences. Choosing Fairtrade supports models that encourage safer work environments, fair pay, and community investments in health.
+                98.5% of South African farm workers receive no contributions to health insurance.
+With public health services thin in many rural areas, this gap has serious consequences.
+Choosing Fairtrade supports models that encourage safer work environments, fair pay, and community investments in health.
               </p>
               <p className="font-exo sm:text-xs text-xs italic text-gray-600">
-                (Visser, M. & Ferrer, S. (2015). Farm Workers' Living and Working Conditions in South Africa: Key Trends, Emergent Issues, and Underlying Structural Problems. University of Cape Town & University of KwaZulu-Natal. Commissioned by the International Labour Organization (ILO). Available at: https://www.ilo.org/global/topics/wages/minimum-wages/WCMS_436204/lang--en/index.htm)
+                (Visser, M. & Ferrer, S. (2015). Farm Workers' Living and Working Conditions in South Africa: Key Trends, Emergent Issues, and Underlying Structural Problems. University of Cape Town & University of KwaZulu-Natal. Commissioned by the International Labour Organization (ILO).
               </p>
             </div>
             <div className="flex justify-center mt-4">
@@ -215,10 +217,12 @@ const QuestionFive = () => {
               Notes of blackberry. Hints of oak. Barriers to healthcare.
             </h3>
             <p className="font-exo text-sm mb-2">
-              98.5% of South African farm workers receive no contributions to health insurance. With public health services thin in many rural areas, this gap has serious consequences. Choosing Fairtrade supports models that encourage safer work environments, fair pay, and community investments in health.
+              98.5% of South African farm workers receive no contributions to health insurance.
+With public health services thin in many rural areas, this gap has serious consequences.
+Choosing Fairtrade supports models that encourage safer work environments, fair pay, and community investments in health.
             </p>
             <p className="font-exo sm:text-xs text-xs italic text-gray-600">
-              (Visser, M. & Ferrer, S. (2015). Farm Workers' Living and Working Conditions in South Africa: Key Trends, Emergent Issues, and Underlying Structural Problems. University of Cape Town & University of KwaZulu-Natal. Commissioned by the International Labour Organization (ILO). Available at: https://www.ilo.org/global/topics/wages/minimum-wages/WCMS_436204/lang--en/index.htm)
+              (Visser, M. & Ferrer, S. (2015). Farm Workers' Living and Working Conditions in South Africa: Key Trends, Emergent Issues, and Underlying Structural Problems. University of Cape Town & University of KwaZulu-Natal. Commissioned by the International Labour Organization (ILO).
             </p>
           </FactCard>
         </div>

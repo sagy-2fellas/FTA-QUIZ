@@ -195,7 +195,7 @@ const ChocolateConsumer = () => {
                   In Ghana and Côte d'Ivoire, over 1.5 million children are estimated to work in cocoa production - many in hazardous conditions. Some studies suggest as many as 45% of children living in cocoa areas are involved in farming tasks. Fairtrade works through community programmes to protect children from exploitation and promote education.
                 </p>
                 <p className="font-exo sm:text-xs text-xs italic text-gray-600">
-                  Reuters (2025). Ensure Cocoa Farmers' Children Go to School? Try Educating Their Mothers First. Published 1 September 2025. Available at: https://www.reuters.com/sustainability/society-equity/ensure-cocoa-farmers-children-go-school-try-educating-their-mothers--ecmii-2025-09-01/
+                  Reuters (2025). Ensure Cocoa Farmers' Children Go to School? Try Educating Their Mothers First. Published 1 September 2025.
                 </p>
               </div>
               <div className="flex justify-center mt-4">
@@ -226,7 +226,7 @@ const ChocolateConsumer = () => {
                 In Ghana and Côte d'Ivoire, over 1.5 million children are estimated to work in cocoa production - many in hazardous conditions. Some studies suggest as many as 45% of children living in cocoa areas are involved in farming tasks. Fairtrade works through community programmes to protect children from exploitation and promote education.
               </p>
               <p className="font-exo sm:text-xs text-xs italic text-gray-600">
-                Reuters (2025). Ensure Cocoa Farmers' Children Go to School? Try Educating Their Mothers First. Published 1 September 2025. Available at: https://www.reuters.com/sustainability/society-equity/ensure-cocoa-farmers-children-go-school-try-educating-their-mothers--ecmii-2025-09-01/
+                Reuters (2025). Ensure Cocoa Farmers' Children Go to School? Try Educating Their Mothers First. Published 1 September 2025.
               </p>
             </FactCard>
           </div>
